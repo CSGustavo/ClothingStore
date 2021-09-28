@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> Clothing Store </title>
+		<style>
+			ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					overflow: hidden;
+					background-color: gray;
+					}
+				
+			li {
+				float: left;
+				}
+			
+			li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				}
+			
+			li a:hover {
+				background-color: black;
+				}
+		</style>
+	</head>
+	<body>
+	<h1> Clothing store </h1>
+	<ul>
+		<li><a href="/usuarios"> Usuarios </a> </li>
+		<li><a href="/clientes"> Clientes </a> </li>
+		<li><a href="/proveedores"> Proveedores </a> </li>
+		<li><a href="/productos"> Productos </a> </li>
+		<li><a href="/ventas"> Ventas </a> </li>
+		<li><a href="/reportes"> Reportes </a> </li>
+	</ul>
+	<h3> Administración de Usuarios </h3>
+	<form action="grabarusuario" method="post">
+				Cédula: <input type= "text" name="cedula"> <br>
+				Usuario: <input type= "text" name="usuario"> <br>
+				Nombre Completo: <input type= "text" name="nombre"> <br>
+				Email: <input type= "text" name="email"> <br>
+				Enable: <input type="text" name="estado"> <br> <br>
+				<input type="submit" value="Aceptar">
+				<button> Cancelar </button>
+			</form>
+	
+	
+	</body>
+</html>
