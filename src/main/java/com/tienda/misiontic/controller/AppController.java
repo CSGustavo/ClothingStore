@@ -30,9 +30,9 @@ public class AppController {
 		return "menu";
 	}
 	
-	@GetMapping({"/user"})
-	public String user(){
-		return "user";
+	@GetMapping({"/usuario"})
+	public String usuario(){
+		return "usuario";
 	}
 	
 	@GetMapping({"/admin"})

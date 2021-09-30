@@ -3,10 +3,13 @@ package com.tienda.misiontic.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 	@Id
+	@Column(name="cedula", nullable=false, length = 20, unique = true)
 	private long cedula_usuario;
 	
 	private String nombre_usuario;
