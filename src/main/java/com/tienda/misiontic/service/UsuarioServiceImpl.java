@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 import com.tienda.misiontic.dao.UsuarioDAO;
 import com.tienda.misiontic.model.Usuario;
 
-@Service
+@Service 
 public class UsuarioServiceImpl implements UsuarioService {
+
 	@Autowired
 	private UsuarioDAO usuariodao;
 	
@@ -33,7 +34,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public void delete(long id) {
-		// TODO Auto-generated method stub
 		usuariodao.deleteById(id);
 	}
 

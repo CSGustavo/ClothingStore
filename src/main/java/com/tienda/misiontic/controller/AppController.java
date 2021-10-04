@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tienda.misiontic.model.Usuario;
-import com.tienda.misiontic.service.UsuarioService;
+//import com.tienda.misiontic.service.UsuarioService;
 
 @Controller
 public class AppController {
@@ -54,27 +54,6 @@ public class AppController {
 			return "menu";
 		} else {
 			return "error";
-		}
-	}
-	
-	@Autowired
-	private UsuarioService usuarioService;
-	
-	//Crear usuario
-	@PostMapping
-	public ResponseEntity<?> create(@RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(usuario));
-	}
-	
-	// Buscar usuario por Id
-	@GetMapping("/id")
-	public ResponseEntity<?> read(@PathVariable(value="id") long usuarioid) {
-		Optional<Usuario> oUsuario = usuarioService.findById(usuarioid);
-		
-		if(!oUsuario.isPresent()) {
-			return ResponseEntity.notFound().build();
-		} else {
-			return ResponseEntity.ok(oUsuario);
 		}
 	}
 }

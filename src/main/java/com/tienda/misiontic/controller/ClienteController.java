@@ -35,7 +35,7 @@ public class ClienteController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(clienteservice.save(cliente));
 	}
 	
-	// Leer un cliente
+	// Buscar cliente por id
 	@GetMapping("/{id}")
 	public ResponseEntity<?> read(@PathVariable(value = "id") long clienteid) {
 		
