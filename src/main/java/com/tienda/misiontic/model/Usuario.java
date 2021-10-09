@@ -6,19 +6,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario {
+	
 	@Id
-	@Column(name="cedula", nullable=false, length = 20, unique = true)
+	@Column(name="cedula_usuario", nullable=false, length = 20, unique=true)
 	private long cedula_usuario;
 	
-	private String nombre_usuario;
-	
-	@Column(name="mail", nullable=false, length = 50, unique=true)
+	@Column(name="email_usuario", nullable=false, length = 50, unique=true)
 	private String email_usuario;
 	
+	@Column(name="nombre_usuario", nullable=false, length=255)
+	private String nombre_usuario;
+	
+	@Column(name="usuario", nullable=false, length=255, unique=true)
 	private String usuario;
 	
+	@Column(name="password", nullable=false, length=255)
 	private String password;
 	
 	public long getCedula_usuario() {

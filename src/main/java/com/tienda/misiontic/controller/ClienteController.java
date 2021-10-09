@@ -36,10 +36,10 @@ public class ClienteController {
 	}
 	
 	// Buscar cliente por id
-	@GetMapping("/{id}")
-	public ResponseEntity<?> read(@PathVariable(value = "id") long clienteid) {
+	@GetMapping("/{cedula_cliente}")
+	public ResponseEntity<?> read(@PathVariable(value = "cedula_cliente") long cedula_cliente) {
 		
-		Optional<Cliente> ucliente = clienteservice.findById(clienteid);
+		Optional<Cliente> ucliente = clienteservice.findById(cedula_cliente);
 		
 		if(!ucliente.isPresent()) {
 			return ResponseEntity.notFound().build();
@@ -49,18 +49,18 @@ public class ClienteController {
 	}
 	
 	// Actualizar un cliente 
-	@PutMapping("/{id}")
-	public ResponseEntity<?> update(@RequestBody Cliente clienteDetails, @PathVariable(value = "id") long clienteid) {
+	@PutMapping("/{cedula_cliente}")
+	public ResponseEntity<?> update(@RequestBody Cliente clienteDetails, @PathVariable(value = "cedula_cliente") long cedula_cliente) {
 		
-		Optional<Cliente> icliente = clienteservice.findById(clienteid);
+		Optional<Cliente> icliente = clienteservice.findById(cedula_cliente);
 		
 		if(!icliente.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		icliente.get().setCedula(clienteDetails.getCedula());
-		icliente.get().setCorreo_electronico(clienteDetails.getCorreo_electronico());
-		icliente.get().setDirecion(clienteDetails.getDirecion());
+		icliente.get().setCedula_cliente(clienteDetails.getCedula_cliente());
+		icliente.get().setEmail_cliente(clienteDetails.getEmail_cliente());
+		icliente.get().setDireccion(clienteDetails.getDireccion());
 		icliente.get().setNombre_completo(clienteDetails.getNombre_completo());
 		icliente.get().setTelefono(clienteDetails.getTelefono());
 		
@@ -68,13 +68,13 @@ public class ClienteController {
 	}
 	
 	// Borrar cliente
-	@DeleteMapping("/{id}")
-	public ResponseEntity<?> delete(@PathVariable(value = "id") long clienteid) {
-		if(!clienteservice.findById(clienteid).isPresent()) {
+	@DeleteMapping("/{cedula_cliente}")
+	public ResponseEntity<?> delete(@PathVariable(value = "cedula_cliente") long cedula_cliente) {
+		if(!clienteservice.findById(cedula_cliente).isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		clienteservice.delete(clienteid);
+		clienteservice.delete(cedula_cliente);
 		return ResponseEntity.ok().build();
 	}
 	

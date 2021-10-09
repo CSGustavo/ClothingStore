@@ -21,8 +21,8 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public void delete(long id) {
-		clientedao.deleteById(id); ;
+	public void delete(long cedula_cliente) {
+		clientedao.deleteById(cedula_cliente); ;
 	}
 
 	@Override
@@ -32,9 +32,9 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public Optional<Cliente> findById(long id) {
+	public Optional<Cliente> findById(long cedula_cliente) {
 		// TODO Auto-generated method stub
-		return clientedao.findById(id);
+		return clientedao.findById(cedula_cliente);
 	}
 	
 }

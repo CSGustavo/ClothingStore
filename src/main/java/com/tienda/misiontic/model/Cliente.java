@@ -1,60 +1,67 @@
 package com.tienda.misiontic.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="cliente")
+@Table(name="clientes")
 public class Cliente {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long  id;
+	@Column(name="cedula_cliente", nullable= false, unique=true, length=20)
+	private long cedula_cliente;
 	
-	private String cedula;
+	@Column(name="nombre_completo", nullable=false, length=255)
 	private String nombre_completo;
-	private String direcion;
+	
+	@Column(name="email_cliente", unique=true, length=255)
+	private String email_cliente;
+	
+	@Column(name="direccion", unique=true, length=255)
+	private String direccion;
+	
+	@Column(name="telefono", unique=true, length=255)
 	private String telefono;
-	private String correo_electronico;
-	public long getId() {
-		return id;
+
+	public long getCedula_cliente() {
+		return cedula_cliente;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+	public void setCedula_cliente(long cedula_cliente) {
+		this.cedula_cliente = cedula_cliente;
 	}
-	public String getCedula() {
-		return cedula;
-	}
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
+
 	public String getNombre_completo() {
 		return nombre_completo;
 	}
+
 	public void setNombre_completo(String nombre_completo) {
 		this.nombre_completo = nombre_completo;
 	}
-	public String getDirecion() {
-		return direcion;
+
+	public String getEmail_cliente() {
+		return email_cliente;
 	}
-	public void setDirecion(String direcion) {
-		this.direcion = direcion;
+
+	public void setEmail_cliente(String email_cliente) {
+		this.email_cliente = email_cliente;
 	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
 	public String getTelefono() {
 		return telefono;
 	}
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getCorreo_electronico() {
-		return correo_electronico;
-	}
-	public void setCorreo_electronico(String correo_electronico) {
-		this.correo_electronico = correo_electronico;
-	}
-	
-	
 }

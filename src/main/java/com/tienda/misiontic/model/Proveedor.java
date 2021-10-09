@@ -8,12 +8,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "proveedores")
 public class Proveedor {
+	
 	@Id
 	@Column(name = "nitproveedor", length = 20, unique = true)
 	private long nitproveedor;
+	
+	@Column(name="ciudad_proveedor", nullable=false, length=255)
 	private String ciudad_proveedor;
+	
+	@Column(name="direccion_proveedor", nullable=false, length=255, unique=true)
 	private String direccion_proveedor;
+	
+	@Column(name="nombre_proveedor", nullable=false, length=255)
 	private String nombre_proveedor;
+	
+	@Column(name="telefono_proveedor", nullable=false, length=255, unique=true)
 	private long telefono_proveedor;
 	
 	public long getNitproveedor() {
@@ -46,6 +55,4 @@ public class Proveedor {
 	public void setTelefono_proveedor(long telefono_proveedor) {
 		this.telefono_proveedor = telefono_proveedor;
 	}
-	
-	
 }

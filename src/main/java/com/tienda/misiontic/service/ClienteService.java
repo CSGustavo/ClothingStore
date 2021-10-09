@@ -8,9 +8,9 @@ public interface ClienteService {
 	
 	public Iterable<Cliente> findAll();
 	
-	public Optional<Cliente> findById(long id);
+	public Optional<Cliente> findById(long cedula_cliente);
 	
 	public Cliente save(Cliente cliente);
 	
-	public void delete(long id);
+	public void delete(long cedula_cliente);
 }

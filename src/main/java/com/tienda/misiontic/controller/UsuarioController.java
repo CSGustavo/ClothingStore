@@ -14,10 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.tienda.misiontic.model.Usuario;
 import com.tienda.misiontic.service.UsuarioService;
 
+@RestController
+@RequestMapping("/api/usuario")
 public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioservice;
@@ -25,6 +29,7 @@ public class UsuarioController {
 	//Crear usuario
 	@PostMapping
 	public ResponseEntity<?> create(@RequestBody Usuario usuario) {
+		
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioservice.save(usuario));
 	}
 	
