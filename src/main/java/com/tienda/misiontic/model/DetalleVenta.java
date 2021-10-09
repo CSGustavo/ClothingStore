@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="detalle_ventas")
-public class DetallesVenta {
+public class DetalleVenta {
 	@Id
 	@Column(name = "codigo_detalle_venta", nullable = false, length = 20)
 	private long codigo_detalle_venta;
